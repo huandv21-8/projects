@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Buy Tickets</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800'>
+  <link rel="stylesheet" href="css/shopping-cart.css">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/logo.ico">
+</head>
+<body>
+<!--giới thiệu-->
+<header id="site-header">
+ <div class="container">
+  <a href="zoo.html"><img src="img/logo.ico" width="80px" height="80px"/><h2 style="color:#000">Kawazaki Zoo</h2></a><br>
+  <p>Welcome to Kawazaki Zoo where you can buy tickets online without having to wait in line!</p>
+    <p> Choose your ticket type and number, enter your details,print out your ticket, give it to the recipient and you can join!</p>
+  </div>
+</header>
+  <!-- bán vé-->
+	<div class="container">
+		<section id="cart">
+        <h1>Times</h1>
+        <p>Every day we are open from 08:00 to 17:00, the last ticket is sold at 16:00</p>
+        <p>We recommend that you come early to enjoy all that the zoo has to offer.</p><br>
+        <p style="color:red">* Note: Tickets must be used within one year from the date of purchase.</p>
+
+  		<article class="product">
+				<header>
+					<a><img src="img/sutulon.jpeg" alt=""></a>
+				</header>
+				<div class="content">
+					<h1>Adult Tickets</h1>
+          Those aged 16 to 50 years old will enjoy a ticket price of 60USD
+				</div>
+				<footer class="content">
+					<span class="qt-minus">-</span>
+					<span class="qt">2</span>
+					<span class="qt-plus">+</span>
+					<h2 class="full-price">120USD</h2>
+					<h2 class="price">60USD</h2>
+				</footer>
+			</article>
+
+			<article class="product">
+				<header>
+					<a><img src="img/sutunon.jpeg" alt=""></a>
+				</header>
+				<div class="content">
+					<h1>Child Tickets</h1>
+					Those aged 5 to 15 years old will enjoy a ticket price of 45USD
+				</div>
+				<footer class="content">
+					<span class="qt-minus">-</span>
+					<span class="qt">2</span>
+					<span class="qt-plus">+</span>
+					<h2 class="full-price">90USD</h2>
+					<h2 class="price">45USD</h2>
+				</footer>
+			</article>
+
+			<article class="product">
+				<header>
+					<a><img src="img/free.jpeg" alt=""/></a>
+				</header>
+				<div class="content">
+					<h1>Free</h1>
+					Admission is free for children aged under 5 and over 50 years old.
+				</div>
+				<footer class="content">
+					<span class="qt-minus">-</span>
+					<span class="qt">1</span>
+					<span class="qt-plus">+</span>
+					<h2 class="full-price">0 USD</h2>
+					<h2 class="price">0 USD</h2>
+				</footer>
+			</article>
+		</section>
+	</div>
+
+	<footer id="site-footer">
+		<div class="container clearfix">
+			<div class="left">
+				<h2 class="subtotal">Ticket Purchase Amount: <span>210 </span>USD</h2>
+				<h3 class="shipping">Ship Money: <span>5 </span>USD</h3>
+			</div>
+			<div class="right">
+				<h1 class="total">Total: <span>215 </span>USD</h1>
+				<a class="btn" href="pay.html">Buy</a>
+			</div>
+		</div>
+	</footer>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script  src="js/shopping-cart.js"></script>
+</body>
+</html>

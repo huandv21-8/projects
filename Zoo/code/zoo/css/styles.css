@@ -1,0 +1,694 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #eee;
+    display: flex;
+}
+
+.container{
+    width: 100%;
+    max-width: 120rem;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+
+.image-gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-rows:auto;
+    grid-gap: 1.5rem;
+    grid-template-areas:
+            'img-1 img-2 img-3 img-3'
+            'img-1 img-4 img-5 img-6'
+            'img-7 img-7 img-8 img-6'
+            'img-9 img-10 img-11 img-12'
+            'img-13 img-14 img-15 img-16'
+            'img-17 img-18 img-19 img-20'
+            'img-21 img-22 img-23 img-24'
+            'img-25 img-26 img-27 img-28'
+            'img-29 img-30 img-31 img-32'
+            'img-33 img-34 img-35 img-36'
+            'img-37 img-38 img-39 img-40'
+            'img-41 img-42 img-43 img-44'
+            'img-45 img-46 img-47 img-48'
+            'img-49 img-50 img-51 img-52'
+            'img-53 img-54 img-55 img-56'
+            'img-57 img-58 img-59 img-60'
+            'img-61 img-62 img-63 img-64'
+            'img-65 img-66 img-67 img-68'
+            'img-69 img-70 img-71 img-72'
+            'img-73 img-74 img-75 img-76'
+            'img-77 img-78 img-79 img-80'
+            'img-81 img-82 img-83 img-84'
+            'img-85 img-86 img-87 img-88'
+            'img-89 img-90 img-91 img-92'
+            'img-93 img-94 img-94 img-95'
+            'img-96 img-97 img-98 img-99'
+            ;
+
+
+}
+
+.image-gallery a{
+    width: 100%;
+    height: 25rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.image-gallery a i{
+    color: rgba(255,255,255, .6);
+    font-size: 3rem;
+    position: relative;
+    z-index: 100;
+    padding: 1rem 3rem;
+    border: 2px solid rgba(255,255,255,.6);
+    border-radius: .4rem;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.image-gallery a::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.8);
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+
+.image-gallery a:hover i,
+.image-gallery a:hover::before{
+    opacity: 1;
+}
+.img-1{
+    grid-area: img-1;
+    min-height: 51.5rem;
+    background-image: url("/mnghia/image/bst/img-1.jpg");
+}
+.img-2{
+    grid-area: img-2;
+    background-image: url("/mnghia/image/bst/img-2.jpg");
+}
+.img-3{
+    grid-area: img-3;
+    background-image: url("/mnghia/image/bst/img-3.jpg")
+}
+.img-4{
+    grid-area: img-4;
+    background-image: url("/mnghia/image/bst/img-4.jpg")
+}
+.img-5{
+    grid-area: img-5;
+    background-image: url("/mnghia/image/bst/img-5.jpg")
+}
+.img-6{
+    grid-area: img-6;
+    min-height: 51.5rem;
+    background-image: url("/mnghia/image/bst/img-6.jpg")
+}
+.img-7{
+    grid-area: img-7;
+    background-image: url("/mnghia/image/bst/img-7.jpg")
+}
+.img-8{
+    grid-area: img-8;
+    background-image: url("/mnghia/image/bst/img-8.jpg")
+}
+.img-9{
+    grid-area: img-9;
+    background-image: url("/mnghia/image/bst/img-9.jpg")
+}
+.img-10{
+    grid-area: img-10;
+    background-image: url("/mnghia/image/bst/img-10.jpg")
+}
+.img-11{
+    grid-area: img-11;
+    background-image: url("/mnghia/image/bst/img-11.jpg")
+}
+.img-12{
+    grid-area: img-12;
+    background-image: url("/mnghia/image/bst/img-12.jpg")
+}
+.img-13{
+    grid-area: img-13;
+    background-image: url("/mnghia/image/bst/img-13.jpg")
+}
+.img-14{
+    grid-area: img-14;
+    background-image: url("/mnghia/image/bst/img-14.jpg")
+}
+.img-15{
+    grid-area: img-15;
+    background-image: url("/mnghia/image/bst/img-15.jpg")
+}
+.img-16{
+    grid-area: img-16;
+    background-image: url("/mnghia/image/bst/img-16.jpg")
+}
+.img-17{
+    grid-area: img-17;
+    background-image: url("/mnghia/image/bst/img-17.jpg")
+}
+.img-18{
+    grid-area: img-18;
+    background-image: url("/mnghia/image/bst/img-18.jpg")
+}
+.img-19{
+    grid-area: img-19;
+    background-image: url("/mnghia/image/bst/img-19.jpg")
+}
+.img-20{
+    grid-area: img-20;
+    background-image: url("/mnghia/image/bst/img-20.jpg")
+}
+
+.img-21{
+    grid-area: img-21;
+    background-image: url("/mnghia/image/bst/img-21.jpg")
+}
+
+.img-22{
+    grid-area: img-22;
+    background-image: url("/mnghia/image/bst/img-22.jpg")
+}
+
+.img-23{
+    grid-area: img-23;
+    background-image: url("/mnghia/image/bst/img-23.jpg")
+}
+.img-24{
+    grid-area: img-24;
+    background-image: url("/mnghia/image/bst/img-24.jpg")
+}
+
+.img-25{
+    grid-area: img-25;
+    background-image: url("/mnghia/image/bst/img-25.jpg")
+}
+
+.img-26{
+    grid-area: img-26;
+    background-image: url("/mnghia/image/bst/img-26.jpg")
+}
+
+.img-27{
+    grid-area: img-27;
+    background-image: url("/mnghia/image/bst/img-27.jpg")
+}
+
+.img-28{
+    grid-area: img-28;
+    background-image: url("/mnghia/image/bst/img-28.jpg")
+}
+
+.img-29{
+    grid-area: img-29;
+    background-image: url("/mnghia/image/bst/img-29.jpg")
+}
+
+.img-30{
+    grid-area: img-30;
+    background-image: url("/mnghia/image/bst/img-30.jpg")
+}
+
+.img-31{
+    grid-area: img-31;
+    background-image: url("/mnghia/image/bst/img-31.jpg")
+}
+
+.img-32{
+    grid-area: img-32;
+    background-image: url("/mnghia/image/bst/img-32.jpg")
+}
+
+.img-33{
+    grid-area: img-33;
+    background-image: url("/mnghia/image/bst/img-33.jpg")
+}
+
+.img-34{
+    grid-area: img-34;
+    background-image: url("/mnghia/image/bst/img-34.jpg")
+}
+
+.img-35{
+    grid-area: img-35;
+    background-image: url("/mnghia/image/bst/img-35.jpg")
+}
+
+.img-36{
+    grid-area: img-36;
+    background-image: url("/mnghia/image/bst/img-36.jpg")
+}
+
+.img-37{
+    grid-area: img-37;
+    background-image: url("/mnghia/image/bst/img-37.jpg")
+}
+
+.img-38{
+    grid-area: img-38;
+    background-image: url("/mnghia/image/bst/img-38.jpg")
+}
+
+.img-39{
+    grid-area: img-39;
+    background-image: url("/mnghia/image/bst/img-39.jpg")
+}
+
+.img-40{
+    grid-area: img-40;
+    background-image: url("/mnghia/image/bst/img-40.jpg")
+}
+
+.img-41{
+    grid-area: img-41;
+    background-image: url("/mnghia/image/bst/img-41.jpg")
+}
+
+.img-42{
+    grid-area: img-42;
+    background-image: url("/mnghia/image/bst/img-42.jpg")
+}
+
+.img-43{
+    grid-area: img-43;
+    background-image: url("/mnghia/image/bst/img-43.jpg")
+}
+
+.img-44{
+    grid-area: img-44;
+    background-image: url("/mnghia/image/bst/img-44.jpg")
+}
+.img-45{
+    grid-area: img-45;
+    background-image: url("/mnghia/image/bst/img-45.jpg")
+}
+
+.img-46{
+    grid-area: img-46;
+    background-image: url("/mnghia/image/bst/img-46.jpg")
+}
+
+.img-47{
+    grid-area: img-47;
+    background-image: url("/mnghia/image/bst/img-47.jpg")
+}
+
+.img-48{
+    grid-area: img-48;
+    background-image: url("/mnghia/image/bst/img-48.jpg")
+}
+
+.img-49{
+    grid-area: img-49;
+    background-image: url("/mnghia/image/bst/img-49.jpg")
+}
+
+.img-50{
+    grid-area: img-50;
+    background-image: url("/mnghia/image/bst/img-50.jpg")
+}
+
+.img-51{
+    grid-area: img-51;
+    background-image: url("/mnghia/image/bst/img-51.jpg")
+}
+
+.img-52{
+    grid-area: img-52;
+    background-image: url("/mnghia/image/bst/img-52.jpg")
+}
+
+.img-53{
+    grid-area: img-53;
+    background-image: url("/mnghia/image/bst/img-53.jpg")
+}
+
+.img-54{
+    grid-area: img-54;
+    background-image: url("/mnghia/image/bst/img-54.jpg")
+}
+
+.img-55{
+    grid-area: img-55;
+    background-image: url("/mnghia/image/bst/img-55.jpg")
+}
+
+.img-56{
+    grid-area: img-56;
+    background-image: url("/mnghia/image/bst/img-56.jpg")
+}
+
+.img-57{
+    grid-area: img-57;
+    background-image: url("/mnghia/image/bst/img-57.jpg")
+}
+
+.img-58{
+    grid-area: img-58;
+    background-image: url("/mnghia/image/bst/img-58.jpg")
+}
+
+.img-59{
+    grid-area: img-59;
+    background-image: url("/mnghia/image/bst/img-59.jpg")
+}
+
+.img-60{
+    grid-area: img-60;
+    background-image: url("/mnghia/image/bst/img-60.jpg")
+}
+
+.img-61{
+    grid-area: img-61;
+    background-image: url("/mnghia/image/bst/img-61.jpg")
+}
+
+.img-62{
+    grid-area: img-62;
+    background-image: url("/mnghia/image/bst/img-62.jpg")
+}
+
+.img-63{
+    grid-area: img-63;
+    background-image: url("/mnghia/image/bst/img-63.jpg")
+}
+
+.img-64{
+    grid-area: img-64;
+    background-image: url("/mnghia/image/bst/img-64.jpg")
+}
+
+.img-65{
+    grid-area: img-65;
+    background-image: url("/mnghia/image/bst/img-65.jpg")
+}
+
+.img-66{
+    grid-area: img-66;
+    background-image: url("/mnghia/image/bst/img-66.jpg")
+}
+.img-67{
+    grid-area: img-67;
+    background-image: url("/mnghia/image/bst/img-67.jpg")
+}
+.img-68{
+    grid-area: img-68;
+    background-image: url("/mnghia/image/bst/img-68.jpg")
+}
+.img-69{
+    grid-area: img-69;
+    background-image: url("/mnghia/image/bst/img-69.jpg")
+}
+.img-70{
+    grid-area: img-70;
+    background-image: url("/mnghia/image/bst/img-70.jpg")
+}
+.img-71{
+    grid-area: img-71;
+    background-image: url("/mnghia/image/bst/img-71.jpg")
+}
+.img-72{
+    grid-area: img-72;
+    background-image: url("/mnghia/image/bst/img-72.jpg")
+}
+.img-73{
+    grid-area: img-73;
+    background-image: url("/mnghia/image/bst/img-73.jpg")
+}
+.img-74{
+    grid-area: img-74;
+    background-image: url("/mnghia/image/bst/img-74.jpg")
+}
+.img-75{
+    grid-area: img-75;
+    background-image: url("/mnghia/image/bst/img-75.jpg")
+}
+.img-76{
+    grid-area: img-76;
+    background-image: url("/mnghia/image/bst/img-76.jpg")
+}
+.img-77{
+    grid-area: img-77;
+    background-image: url("/mnghia/image/bst/img-77.jpg")
+}
+.img-78{
+    grid-area: img-78;
+    background-image: url("/mnghia/image/bst/img-78.jpg")
+}
+.img-79{
+    grid-area: img-79;
+    background-image: url("/mnghia/image/bst/img-79.jpg")
+}
+.img-80{
+    grid-area: img-80;
+    background-image: url("/mnghia/image/bst/img-80.jpg")
+}
+.img-81{
+    grid-area: img-81;
+    background-image: url("/mnghia/image/bst/img-81.jpg")
+}
+.img-82{
+    grid-area: img-82;
+    background-image: url("/mnghia/image/bst/img-82.jpg")
+}
+.img-83{
+    grid-area: img-83;
+    background-image: url("/mnghia/image/bst/img-83.jpg")
+}
+.img-84{
+    grid-area: img-84;
+    background-image: url("/mnghia/image/bst/img-84.jpg")
+}
+.img-85{
+    grid-area: img-85;
+    background-image: url("/mnghia/image/bst/img-85.jpg")
+}
+.img-86{
+    grid-area: img-86;
+    background-image: url("/mnghia/image/bst/img-86.jpg")
+}
+.img-87{
+    grid-area: img-87;
+    background-image: url("/mnghia/image/bst/img-87.jpg")
+}
+.img-88{
+    grid-area: img-88;
+    background-image: url("/mnghia/image/bst/img-88.jpg")
+}
+.img-89{
+    grid-area: img-89;
+    background-image: url("/mnghia/image/bst/img-89.jpg")
+}
+.img-90{
+    grid-area: img-90;
+    background-image: url("/mnghia/image/bst/img-90.jpg")
+}
+.img-91{
+    grid-area: img-91;
+    background-image: url("/mnghia/image/bst/img-91.jpg")
+}
+.img-92{
+    grid-area: img-92;
+    background-image: url("/mnghia/image/bst/img-92.jpg")
+}
+.img-93{
+    grid-area: img-93;
+    background-image: url("/mnghia/image/bst/img-93.jpg")
+}
+.img-94{
+    grid-area: img-94;
+    background-image: url("/mnghia/image/bst/img-94.jpg")
+}
+.img-95{
+    grid-area: img-95;
+    background-image: url("/mnghia/image/bst/img-95.jpg")
+}
+.img-96{
+    grid-area: img-96;
+    background-image: url("/mnghia/image/bst/img-96.jpg")
+}
+.img-97{
+    grid-area: img-97;
+    background-image: url("/mnghia/image/bst/img-97.jpg")
+}
+.img-98{
+    grid-area: img-98;
+    background-image: url("/mnghia/image/bst/img-98.jpg")
+}
+.img-99{
+    grid-area: img-99;
+    background-image: url("/mnghia/image/bst/img-99.jpg")
+}
+
+
+@media screen and (max-width: 900px){
+    .image-gallery{
+        grid-template-areas:
+                'img-1 img-1 img-2 img-2'
+                'img-1 img-1 img-3 img-3'
+                'img-4 img-4 img-5 img-5'
+                'img-6 img-7 img-7 img-7'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8'
+                'img-8 img-8 img-8 img-8';
+
+    }
+    .image-gallery a{
+        height: 20rem;
+    }
+
+    .img-1{
+        min-height: 41.5rem;
+    }
+    .img-6{
+        min-height: 20rem;
+    }
+}
+@media screen and (max-width: 600px){
+    .image-gallery{
+        grid-template-areas:
+                'img-1 img-1 img-1 img-1'
+                'img-2 img-2 img-2 img-2'
+                'img-3 img-3 img-3 img-3'
+                'img-4 img-4 img-4 img-4'
+                'img-5 img-5 img-5 img-5'
+                'img-6 img-6 img-6 img-6'
+                'img-7 img-7 img-7 img-7'
+                'img-8 img-8 img-8 img-8'
+                'img-9 img-9 img-9 img-9'
+                'img-10 img-10 img-10 img-10'
+                'img-11 img-11 img-11 img-11'
+                'img-12 img-12 img-12 img-12'
+                'img-13 img-13 img-13 img-13'
+                'img-14 img-14 img-14 img-14'
+                'img-15 img-15 img-15 img-15'
+                'img-16 img-16 img-16 img-16'
+                'img-17 img-17 img-17 img-17'
+                'img-18 img-18 img-18 img-18'
+                'img-19 img-19 img-19 img-19'
+                'img-20 img-20 img-20 img-20'
+                'img-21 img-21 img-21 img-21'
+                'img-22 img-22 img-22 img-22'
+                'img-23 img-23 img-23 img-23'
+                'img-24 img-24 img-24 img-24'
+                'img-25 img-25 img-25 img-25'
+                'img-26 img-26 img-26 img-26'
+                'img-27 img-27 img-27 img-27'
+                'img-28 img-28 img-28 img-28'
+                'img-29 img-29 img-29 img-29'
+                'img-30 img-30 img-30 img-30'
+                'img-31 img-31 img-31 img-31'
+                'img-32 img-32 img-32 img-32'
+                'img-33 img-33 img-33 img-33'
+                'img-34 img-34 img-34 img-34'
+                'img-35 img-35 img-35 img-35'
+                'img-36 img-36 img-36 img-36'
+                'img-37 img-37 img-37 img-37'
+                'img-38 img-38 img-38 img-38'
+                'img-39 img-39 img-39 img-39'
+                'img-40 img-40 img-40 img-40'
+                'img-41 img-41 img-41 img-41'
+                'img-42 img-42 img-42 img-42'
+                'img-43 img-43 img-43 img-43'
+                'img-44 img-44 img-44 img-44'
+                'img-45 img-45 img-45 img-45'
+                'img-46 img-46 img-46 img-46'
+                'img-47 img-47 img-47 img-47'
+                'img-48 img-48 img-48 img-48'
+                'img-49 img-49 img-49 img-49'
+                'img-50 img-50 img-50 img-50'
+                'img-43 img-43 img-43 img-43'
+                'img-43 img-43 img-43 img-43'
+                'img-43 img-43 img-43 img-43'
+                'img-43 img-43 img-43 img-43'
+                'img-43 img-43 img-43 img-43'
+                'img-43 img-43 img-43 img-43'
+                'img-43 img-43 img-43 img-43'
+                'img-43 img-43 img-43 img-43'
+                'img-43 img-43 img-43 img-43'
+                'img-43 img-43 img-43 img-43'
+                'img-43 img-43 img-43 img-43'
+                'img-43 img-43 img-43 img-43'
+                'img-43 img-43 img-43 img-43'
+                'img-43 img-43 img-43 img-43'
+
+
+    }
+    .image-gallery a,
+    .img-1,
+    .img-6{
+        min-height: 30rem;
+        height: 30rem;
+}
+
+}

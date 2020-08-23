@@ -1,0 +1,19 @@
+.tborder{
+    float: left;
+
+    text-align: center;
+}
+.colorspan{
+    color: red;
+    font-size: 11px;
+}
+.visa{
+    background: white;font-size: 1.5rem;
+
+}
+.hiencash{
+  display: none;
+}
+.showbanking{
+  display: none;
+}

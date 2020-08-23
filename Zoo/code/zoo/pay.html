@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Payment</title>
+    <link rel="stylesheet" href="css/pay.css">
+    <link rel="stylesheet" href="css/pay1.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/logo.png">
+  </head>
+  <body>
+    <header id="site-header">
+		 <div class="container">
+      <a href="zoo.html"><img src="img/logo.ico" width="80px" height="80px"/><h2 style="color:#000">Kawazaki Zoo</h2></a><br>
+      <p>Welcome to Kawazaki Zoo where you can buy tickets online without having to wait in line!</p>
+        <p> Choose your ticket type and number, enter your details,print out your ticket, give it to the recipient and you can join!</p>
+      </div>
+  	</header>
+    <div class="payment" style="height:500px">
+      <div class="buy2">
+        <span id="span1"><h2>Information</h2></span>
+        <div class="page">
+          <div class="tabs1">
+              <ul class="tab-list"><li class="active"><h3>Please enter information !</h3></li></ul>
+            <table>
+              <tr>
+                <th><label for="inputfirstname"><p>FirstName:</p></label></th>
+                <th><input type="text" class="form-control" id="inputfirstname"  required onkeydown="checkfirstname()"></br>
+                <span id="error-firstname" class="colorspan"></span></th>
+              </tr>
+              <tr>
+                <th><label for="inputlastname"><p>LastName:</p></label></th>
+                <th>  <input type="text" class="form-control" id="inputlastname" required onkeydown="checklastname()"></br>
+                  <span id="error-lastname" class="colorspan"></span></th>
+              </tr>
+              <tr>
+                <th><label for="inputEmail4"><p>Email:</p></label></th>
+                <th><input type="email" class="form-control" id="inputEmail4"  required onkeydown="checkemail()"></br>
+                <span id="error-email" class="colorspan"></span></th>
+              </tr>
+              <tr>
+                <th><label for="inputPhone"><p>Phone:</p></label></th>
+                <th><input type="text" class="form-control" id="inputPhone" maxlength="10" minlength="10" required onkeydown="checkphone()"></br>
+                <span id="error-phone" class="colorspan"></span></th>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="top">
+         <h2>Payment</h2><br>
+         <section class="page">
+            <div class="tabs">
+              <ul class="tab-list">
+                <li class="active"><a href="#tab-1" class="tab-control">
+                  <h3>Credit card</h3>
+                  </a></li>
+                <li><a href="#tab-2" class="tab-control">
+                  <h3>InternetBanking</h3>
+                  </a></li>
+                <li><a href="#tab-3" class="tab-control">
+                  <h3>Cash</h3>
+                  </a></li>
+              </ul>
+              <div class="tab-panel active" id="tab-1">
+                <table>
+                 <tr>
+                   <th><p>Name on card:</p></th>
+                   <th><input type="text" class="form-control" id="namecard"  required onkeydown="checknamecard()"><br>
+                       <span id="error-namecard" class="colorspan"></span></th>
+                 </tr>
+                 <tr>
+                   <th><p>Credit card number:</p></th>
+                   <th><div class="input-group">
+                        <input type="text" class="form-control" id="cardnumber" onkeydown="checkcardnumber()" maxlength="15" style="border: 1px solid #3344337a !important;">
+                        <div class="input-group-append">
+                          <span class="input-group-text" id="basic-addon2"><i id="henxui"></i></span>
+                        </div>
+                      </div>
+                      <span id="error-numbercard" class="colorspan"></span>
+                    </th>
+                 </tr>
+                 <tr>
+                   <th><p>Expiration:</p></th>
+                   <th>
+                     <div class="input-group">
+                        <input type="number" placeholder="MM" name="" class="form-control" required min="1" max="12">
+                        <input type="number" placeholder="YYYY" name="" class="form-control" required min="2019" style="width:90px">
+                      </div>
+                      <span id="error-Expiration" class="colorspan"></span>
+                   </th>
+                 </tr>
+                 <tr>
+                   <th><p>CVV:</p></th>
+                   <th><input type="text" class="form-control" id="ipcvv" required maxlength="3" onkeydown="checkCvv()"><br>
+                      <span id="error-cvv" class="colorspan"></span>
+                   </th>
+                 </tr>
+                </table>
+              </div>
+              <div class="tab-panel" id="tab-2">
+                 <div style="margin:20px 0 10px 30px;">
+                    <label for="inputState" style="color:#000"> Sellect Bank :</label>
+                    <select id="inputState" class="form-control" required>
+                      <option selected>VietComBank</option>
+                      <option>Techcombank</option>
+                      <option>TienPhongbank</option>
+                      <option>Agribank</option>
+                      <option>Sacombank</option>
+                    </select>
+                 </div>
+                 <div class="col-md-12">
+                    <div class="form-group col-md-4">
+                      <label for="tpstk"  style="color:#000">Account Number:</label>
+                      <input type="text"  id="accbanking" class="form-control" required maxlength="13" onkeydown="checkaccbanking()">
+                      <span id="error-accbanking" class="colorspan"></span>
+                   </div>
+                </div>
+              </div>
+              <div class="tab-panel" id="tab-3">
+                <p>Please come to Kawazaki Zoo to refund the ticket fee !!!</p>
+              </div>
+            </div> <!-- .tabs -->
+        </section>  <!--.page-->
+      </div>
+      <div class="buy1">
+          <table>
+            <tr>
+              <th><h2 style="font-size:15px">Ticket type</h2></th>
+              <th><h2 style="font-size:15px">Amount</h2></th>
+              <th><h2 style="font-size:15px">Price</h2></th>
+            </tr>
+        </table>
+        <table>
+         <div class="haha">
+            <tr>
+              <th><p>Adult tickets</p></th>
+              <th>
+                <span> - </span>
+                <span style="padding:0 15px">2</span>
+                <span>+</span>
+              </th>
+              <th><p>60USD</p></th>
+            </tr>
+
+            <tr>
+              <th><p>Child tickets</p></th>
+              <th>
+                <span> - </span>
+                <span style="padding:0 15px">2</span>
+                <span>+</span>
+              </th>
+              <th><p>45USD</p></th>
+            </tr>
+
+            <tr>
+              <th><p>Free</p></th>
+              <th>
+                <span> - </span>
+                <span style="padding:0 15px"> 2 </span>
+                <span> +</span>
+              </th>
+              <th><p>0 USD</p></th>
+            </tr>
+         </div>
+       </table>
+       <p style="float:left;font-size:30px">Total: 245USD</p><br><br><br><br>
+       <button type="button" name="button" class="btn btn-success" onclick="orderLink()"  style="background: #384313;
+      border:none;
+      border-radius: 20px;
+      color: #ffffff;
+      display: block;
+      font: 18px Georgia, Times, serif;
+      letter-spacing: 1px;
+      padding: 7px 25px;
+      text-shadow: 0 1px 1px #000000;
+      text-transform: uppercase;
+      cursor: pointer">
+     <astyle="color:#fff">Buy it</a></button></div>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    </div>
+    <div id="tail">
+        <div class="tail1">
+           <div class="left_tail">
+             <strong><i class="fas fa-map-marker-alt"></i> Kawasaki Zoo:</strong>
+             <p>8 Ton That Thuyet, My Dinh 2,</p>
+              <p>  Hanoi, Vietnam.</p>
+              <br>
+              <strong><i class="fas fa-phone-volume"></i> Phone:</strong>
+              <p>0966469746 (Do Van Huan)</p>
+              <p>0666729716 (Nguyen Minh Nghia)</p>
+              <p>0522697743 (Duong Thanh Binh)</p>
+              <p>0849818969 (Le Van Phuong)</p>
+              <p>0373485924 (Nguyen Thanh Lam)</p>
+              <br>
+           </div>
+           <div class="middle_tail">
+             <strong>Website link:</strong><br><br>
+             <i class="far fa-hand-point-right"></i><a href="http://khudulichdainam.vn/diem-tham-quan/3-vuon-bach-thu.html">  Dai Nam Zoo</a><br><br>
+             <i class="far fa-hand-point-right"></i><a href="http://saigonzoo.net/">  Botanical garden</a><br><br>
+             <i class="far fa-hand-point-right"></i><a href="https://www.japanhoppers.com/vi/hokkaido/asahikawa/kanko/476/">  Asahiyama Zoo</a><br><br>
+             <i class="far fa-hand-point-right"></i><a href="https://sodulich.hanoi.gov.vn/so-du-lich">  Hanoi Tourism Department</a><br><br><br>
+             <strong><i class="fas fa-envelope-square"></i> Email:</strong><br>
+             <p><i class="far fa-hand-point-right"></i> KawasakiZoo@gmail.com</p>
+           </div>
+           <div class="right_tail">
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3109.0361687990835!2d105.77642988669157!3d21.029485589063295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b32ecb92db%3A0x3964e6238a3bd088!2zOCBUw7RuIFRo4bqldCBUaHV54bq_dCwgTeG7uSDEkMOsbmgsIEPhuqd1IEdp4bqleSwgSMOgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1575557237320!5m2!1sen!2s"
+            width="400px" height="350px" frameborder="0" style="border:0;"></iframe>
+         </div>
+        </div>
+     </div>
+    <script src="js/pay.js"></script>
+    <script src="js/checkform.js"></script>
+    <script src="https://kit.fontawesome.com/5e5457d628.js" crossorigin="anonymous"></script>
+  </body>
+</html>

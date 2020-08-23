@@ -1,0 +1,200 @@
+/********** TABS **********/
+.top{
+  height: none;
+  width: 475px;
+  background:#c8cdb4;
+  float: left;
+  border-radius: 10px;
+  margin: 20px;
+}
+.text-input{
+  border-radius: 3px;
+}
+.form-control{
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+
+.tab-list {
+  margin: 0;
+  padding: 0;}
+
+.tab-list li {
+  display: inline-block;
+  list-style-type: none;
+  background-color: #303030;
+  border-bottom: 3px solid #858585;
+
+  text-transform: uppercase;
+  letter-spacing: 0.2em;}
+
+.tab-list li a {
+  color: #f2f2f2;
+  display: block;
+  padding: 3px 10px 3px 10px;}
+
+
+/********** HOVER STATES **********/
+.tab-list li.active, .tab-list li.hover {
+  background-color: #e5e5e5;
+  border-bottom: 3px solid #e5e5e5;}
+
+.tab-list li.active a, .tab-list li a:hover {
+  color: #666;
+  background-color: #e5e5e5;}
+
+
+/********** PANELS **********/
+.tab-panel {
+  display: none;
+  background-color: #e5e5e5;
+  color: #666;
+  min-height: 150px;
+  overflow: auto;}
+
+.tab-panel.active {
+  display: block;}
+
+.tab-panel p {
+  margin: 20px;
+}
+
+  .buy1{
+  	background:#c8cdb4;
+  	border-radius:5px;
+  	padding:20px;
+  	width:auto;
+  	height: auto;
+  	float: left;
+    margin-top: 20px;
+  }
+  .buy1 table {
+  	background: #fff;
+  }
+  .buy1 table tr th{
+  	width: 147px;
+  }
+  .haha{
+	border-top: 1px solid red;
+}
+p,span{
+  color: #000;
+}
+.buy2{
+  background:#c8cdb4;
+  border-radius:5px;
+  width:475px;
+  height: auto;
+  float: left;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.tabs {
+  background-color: #e5e5e5;
+  color: #666;
+  min-height: 150px;
+  overflow: auto;
+  margin:0 15px 15px 15px;
+}
+.tabs1 {
+  background-color: #e5e5e5;
+  color: #666;
+  min-height: 150px;
+  overflow: auto;
+  margin: 15px;
+}
+.tabs1 table tr th{
+  padding-left: 50px;
+}
+.haha table{
+  background: #e5e5e5;
+}
+#site-header{
+	height: 200px;
+}
+#site-header p{
+	padding-top: -20px;
+	padding-left: 50px;
+	line-height: 7px;
+	color:  #54781f;
+}
+#site-header img{
+	float: left;
+	font-size: 31px;
+	padding: 20px ;
+}
+#site-header img:hover{
+	width: 80px;
+	height: 80px;
+}
+#site-header, #site-footer {
+ background: #fff;
+}
+
+#site-header {
+	margin: 0 0 30px 0;
+}
+#site-header h2 {
+	font-size: 31px;
+	font-weight: 300;
+	padding: 50px 0 0 0;
+	position: relative;
+	margin: 0;
+}
+.container {
+	margin: 0 auto;
+	width: 980px;
+}
+#tail{
+  width: 100%;
+  height: 400px;
+  background:#fff;
+}
+.tail1{
+  height: 500px;
+  padding: 30px 10% 0 18%;
+}
+.left_tail{
+  width: 25%;
+  height: 370px;
+  background: #fff;
+  float: left;
+  color: #000;
+
+}
+.left_tail strong{
+  text-indent: 10px;
+}
+.left_tail p{
+  font-size: 15px;
+  text-indent: 20px;
+}
+.middle_tail{
+  width: 25%;
+  height: 370px;
+  background:	#fff;
+  float: left;
+  color: #000;
+}
+.middle_tail i{
+  padding-left: 20px;
+}
+.middle_tail a{
+  color: black;
+  font-size: 15px;
+  text-decoration: none;
+}
+.middle_tail a:hover{
+  color: #87bdd4;
+}
+.right_tail{
+    float: left;
+  width: 30%;
+  height: 370px;
+  background: #fff;
+}
+.right_tail i{
+  font-size: 10px;
+  text-indent: 30px;
+}

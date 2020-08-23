@@ -1,0 +1,17 @@
+#dear{
+  padding-top: 20px;
+}
+.panel-primary{
+  border: 1px solid #bbaebb;
+}
+.panel-heading{
+  height: 40px;
+  text-align: center;
+}
+.panel-footer{
+  text-align: center;
+}
+.fa-star{
+  color:#b6ac1f;
+  font-size: 20px;
+}

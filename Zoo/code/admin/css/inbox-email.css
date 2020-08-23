@@ -1,0 +1,37 @@
+.col-md-3{
+  margin: 20px 0px 20px 0px;
+}
+.tile{
+  background: #efeff4;
+}
+.tile-title{
+  border-bottom: 0.9px solid #000;
+  padding-bottom: 15px;
+  padding-top: 10px;
+}
+.huan {
+  color: #000;
+  border-bottom: 0.40px solid #ddd4d4;
+}
+.col-md-9{
+  margin-top: 20px;
+}
+.huan1{
+  content: "";
+  font-family: "FontAwesome";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  width: 1em;
+  display: inline-block;
+  margin-right: 2px;
+  vertical-align: -2px;
+}
+.fa-star-o,.fa-star{
+  color: #d2e81f;
+}
