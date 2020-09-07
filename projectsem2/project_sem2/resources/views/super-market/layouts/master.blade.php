@@ -27,8 +27,7 @@
 
 
     <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <style type="text/css">
         .search_product:hover {
             color: red;
@@ -165,9 +164,9 @@
             isFind = false;
             $.post('{{ route('checkQuantityProduct') }}', {
 			'_token': '{{ csrf_token() }}',
-			
+
 			'id': id, //id produck user click
-            
+
 		}, function(data) {
             if(data <1){
                 alert('Sorry, the product is out of stock')
@@ -179,12 +178,12 @@
                             alert('Sorry, the product is out of stock')
                             return;
                         }else{
-                            
+
                             isFind = true;
                             cartList[i].num++;
                             break;
                         }
-                       
+
                     }
                 }
                 if (!isFind) {
@@ -200,11 +199,11 @@
                 alert('add product to cart success')
                 showCart();
             }
-			
+
             // window.location="{{route('index')}}";
 		})
-           
-           
+
+
         }
 
         function showCart() {
@@ -273,7 +272,6 @@
                             $('#countryList').html(
                                 data
                                 ); //nhận dữ liệu dạng html và gán vào cặp thẻ có id là countryList
-
                         }
                     });
                 } else {

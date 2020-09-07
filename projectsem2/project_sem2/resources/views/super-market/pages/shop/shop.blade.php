@@ -26,7 +26,7 @@
             </div>
         </div>
 
-      
+
     </section>
 @endsection
 @section('latest')
@@ -181,8 +181,8 @@
                                             <div class="product__discount__percent">{{ $sale }}%</div>
                                             <ul class="product__item__pic__hover">
                                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                                <li><a href="{{ route('productDetail', $item->id_product) }}"><i
-                                                            class="fa fa-retweet"></i></a></li>
+                                                <li><a href="{{ route('productDetail', $item->id_product) }}">
+                                                  <i class="fa fa-retweet"></i></a></li>
                                                 <li><a href="#"
                                                         onclick="addToCart({{ $item->id_product }}, '{{ $item->name_product }}', {{ $price_sale }}, '{{ $item->image }}')">
                                                         <i class="fa fa-shopping-cart"></i></a></li>
@@ -265,7 +265,7 @@
         }
 
         function showCart1() {
-            //   alert('test thanh cong')  
+            //   alert('test thanh cong')
             total = 0;
             $('#cartList').empty()
             for (var i = 0; i < cartList.length; i++) {
