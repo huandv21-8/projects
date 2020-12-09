@@ -39,11 +39,11 @@ public class image {
 		this.product = product;
 	}
 
-	public String getLink_iamge() {
+	public String getLink_image() {
 		return link_image;
 	}
 
-	public void setLink_iamge(String link_image) {
+	public void setLink_image(String link_image) {
 		this.link_image = link_image;
 	}
 

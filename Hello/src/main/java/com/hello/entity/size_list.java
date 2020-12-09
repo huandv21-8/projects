@@ -12,7 +12,7 @@ public class size_list {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id_size;
 
-	int size_number;
+	String size_number;
 	String created_at;
 	String updated_at;
 
@@ -24,11 +24,11 @@ public class size_list {
 		this.id_size = id_size;
 	}
 
-	public int getSize_number() {
+	public String getSize_number() {
 		return size_number;
 	}
 
-	public void setSize_number(int size_number) {
+	public void setSize_number(String size_number) {
 		this.size_number = size_number;
 	}
 

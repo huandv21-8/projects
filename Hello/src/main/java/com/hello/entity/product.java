@@ -1,9 +1,9 @@
 package com.hello.entity;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import com.sun.istack.Nullable;
 
 @Entity(name = "product")
 public class product {
@@ -35,14 +37,16 @@ public class product {
 	private String description;
 	private String image;
 
-	private Integer sale;
+	@org.springframework.lang.Nullable
+	private  Integer sale;
+
 	private int status;
 	private String created_at;
 	private String updated_at;
 
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_product")
-	Set<image> images;
+	List<image> images;
 
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_product")
@@ -50,14 +54,14 @@ public class product {
 
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_product")
-	Set<size_product> size_products;
+	List<size_product> size_products;
 
 	public int getId_product() {
 		return id_product;
 	}
 
 	public void setId_product(int id_product) {
-		this.id_product = id_product;
+	 this.id_product = id_product;
 	}
 
 	public category getCategory() {
@@ -116,19 +120,15 @@ public class product {
 		this.image = image;
 	}
 
-	public int getSale() {
+	public Integer getSale() {
 		return sale;
 	}
 
 	public void setSale(Integer sale) {
-		if (sale==null) {
-			this.sale = null;
-		}else {
-			this.sale = sale;
-		}
-		
+		this.sale = sale;
 	}
 
+	
 	public int getStatus() {
 		return status;
 	}
@@ -153,11 +153,11 @@ public class product {
 		this.updated_at = updated_at;
 	}
 
-	public Set<image> getImages() {
+	public List<image> getImages() {
 		return images;
 	}
 
-	public void setImages(Set<image> images) {
+	public void setImages(List<image> images) {
 		this.images = images;
 	}
 
@@ -169,11 +169,11 @@ public class product {
 		this.order_details = order_details;
 	}
 
-	public Set<size_product> getSize_products() {
+	public List<size_product> getSize_products() {
 		return size_products;
 	}
 
-	public void setSize_products(Set<size_product> size_products) {
+	public void setSize_products(List<size_product> size_products) {
 		this.size_products = size_products;
 	}
 

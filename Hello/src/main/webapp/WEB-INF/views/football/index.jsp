@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,7 +18,7 @@
 	</div>-->
 
 	<!-- Offcanvas Menu Begin -->
-<!--  	<div class="offcanvas-menu-overlay"></div>
+	<!--  	<div class="offcanvas-menu-overlay"></div>
 	<div class="offcanvas-menu-wrapper">
 		<div class="offcanvas__close">+</div>
 		<ul class="offcanvas__widget">
@@ -89,236 +90,75 @@
 	<section class="product spad">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-4 col-md-4">
+			<div class="col-lg-3 col-md-3">
 				<div class="section-title">
 					<h4>New product</h4>
 				</div>
 			</div>
-			<div class="col-lg-8 col-md-8">
+			<div class="col-lg-9 col-md-9">
 				<ul class="filter__controls">
 					<li class="active" data-filter="*">All</li>
 					<c:forEach items="${list_topic }" var="item">
 						<li data-filter=".a${item.id_topic }">${item.name_topic }</li>
 					</c:forEach>
-				
+
 				</ul>
 			</div>
 		</div>
 		<div class="row property__gallery">
-		  	<c:forEach items="${list_product }" var="item">
-		  
-				<div id="product" data-id="${item.getTopic().id_topic }" class="col-lg-3 col-md-4 col-sm-6 mix a${item.getTopic().id_topic }">
+			<c:forEach items="${list_product }" var="item">
+				<div id="product" data-id="${item.getTopic().id_topic }"
+					class="col-lg-3 col-md-4 col-sm-6 mix a${item.getTopic().id_topic }">
 					<div class="product__item">
-						<div class="product__item__pic set-bg"
-							data-setbg="${item.image }">
-							<div class="label new">New</div>
+						<div class="product__item__pic set-bg" data-setbg="${item.image }">
+							<c:choose>
+								<c:when test="${item.sale != null}">
+									<div class="label sale">Sale</div>
+								</c:when>
+								<c:otherwise>
+									<div class="label new">New</div>
+								</c:otherwise>
+							</c:choose>
 							<ul class="product__hover">
-								 <li><a href="${item.image }" class="image-popup"><i class="fa fa-retweet"></i></a>
-                                </li>
-                                <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+								<li><a href="${item.image }" class="image-popup"><i
+										class="fa fa-retweet"></i></a></li>
+								<li><a href="#"><i class="far fa-heart"></i></a></li>
+								<li><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
 							</ul>
 						</div>
 						<div class="product__item__text">
 							<h6>
-								<a href="#">${item.name_product }</a>
+								<a href='<c:url value="/Detail/${item.id_product }" />'>${item.name_product }</a>
 							</h6>
 							<div class="rating">
 								<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
 									class="fa fa-star"></i> <i class="fa fa-star"></i> <i
 									class="fa fa-star"></i>
 							</div>
-							<div class="product__price"> ${item.price }</div>
+							<c:choose>
+								<c:when test="${item.sale != null }">
+									<div class="product__price">
+										<fmt:formatNumber value="${ item.price-(item.price/100*item.sale) }" minFractionDigits="0"/> vnđ<span>
+											<fmt:formatNumber value="${item.price}" minFractionDigits="0"/> vnđ</span>
+									</div>
+								</c:when>
+								<c:otherwise>
+									<div class="product__price"><fmt:formatNumber value="${item.price}" minFractionDigits="0"/> vnđ</div>
+								</c:otherwise>
+							</c:choose>
+
 						</div>
 					</div>
 				</div>
 			</c:forEach>
-			
-			<div class="col-lg-3 col-md-4 col-sm-6 mix a1">
-				<div class="product__item">
-					<div class="product__item__pic set-bg"
-						data-setbg="img/product/product-2.jpg">
-						<ul class="product__hover">
-							 <li><a href="${item.image }" class="image-popup"><i class="fa fa-retweet"></i></a>
-                                </li>
-                                <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
-						</ul>
-					</div>
-					<div class="product__item__text">
-						<h6>
-							<a href="#">Flowy striped skirt</a>
-						</h6>
-						<div class="rating">
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i>
-						</div>
-						<div class="product__price">$ 49.0</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 col-sm-6 mix accessories">
-				<div class="product__item">
-					<div class="product__item__pic set-bg"
-						data-setbg="img/product/product-3.jpg">
-						<div class="label stockout">out of stock</div>
-						<ul class="product__hover">
-							<li><a href="img/product/product-3.jpg" class="image-popup"><span
-									class="arrow_expand"></span></a></li>
-							<li><a href="#"><span class="icon_heart_alt"></span></a></li>
-							<li><a href="#"><span class="icon_bag_alt"></span></a></li>
-						</ul>
-					</div>
-					<div class="product__item__text">
-						<h6>
-							<a href="#">Cotton T-Shirt</a>
-						</h6>
-						<div class="rating">
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i>
-						</div>
-						<div class="product__price">$ 59.0</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 col-sm-6 mix cosmetic">
-				<div class="product__item">
-					<div class="product__item__pic set-bg"
-						data-setbg="img/product/product-4.jpg">
-						<ul class="product__hover">
-							<li><a href="img/product/product-4.jpg" class="image-popup"><span
-									class="arrow_expand"></span></a></li>
-							<li><a href="#"><span class="icon_heart_alt"></span></a></li>
-							<li><a href="#"><span class="icon_bag_alt"></span></a></li>
-						</ul>
-					</div>
-					<div class="product__item__text">
-						<h6>
-							<a href="#">Slim striped pocket shirt</a>
-						</h6>
-						<div class="rating">
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i>
-						</div>
-						<div class="product__price">$ 59.0</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 col-sm-6 mix kid">
-				<div class="product__item">
-					<div class="product__item__pic set-bg"
-						data-setbg="img/product/product-5.jpg">
-						<ul class="product__hover">
-							<li><a href="img/product/product-5.jpg" class="image-popup"><span
-									class="arrow_expand"></span></a></li>
-							<li><a href="#"><span class="icon_heart_alt"></span></a></li>
-							<li><a href="#"><span class="icon_bag_alt"></span></a></li>
-						</ul>
-					</div>
-					<div class="product__item__text">
-						<h6>
-							<a href="#">Fit micro corduroy shirt</a>
-						</h6>
-						<div class="rating">
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i>
-						</div>
-						<div class="product__price">$ 59.0</div>
-					</div>
-				</div>
-			</div>
-			<div
-				class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
-				<div class="product__item sale">
-					<div class="product__item__pic set-bg"
-						data-setbg="img/product/product-6.jpg">
-						<div class="label sale">Sale</div>
-						<ul class="product__hover">
-							<li><a href="img/product/product-6.jpg" class="image-popup"><span
-									class="arrow_expand"></span></a></li>
-							<li><a href="#"><span class="icon_heart_alt"></span></a></li>
-							<li><a href="#"><span class="icon_bag_alt"></span></a></li>
-						</ul>
-					</div>
-					<div class="product__item__text">
-						<h6>
-							<a href="#">Tropical Kimono</a>
-						</h6>
-						<div class="rating">
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i>
-						</div>
-						<div class="product__price">
-							$ 49.0 <span>$ 59.0</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div
-				class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
-				<div class="product__item">
-					<div class="product__item__pic set-bg"
-						data-setbg="img/product/product-7.jpg">
-						<ul class="product__hover">
-							<li><a href="img/product/product-7.jpg" class="image-popup"><span
-									class="arrow_expand"></span></a></li>
-							<li><a href="#"><span class="icon_heart_alt"></span></a></li>
-							<li><a href="#"><span class="icon_bag_alt"></span></a></li>
-						</ul>
-					</div>
-					<div class="product__item__text">
-						<h6>
-							<a href="#">Contrasting sunglasses</a>
-						</h6>
-						<div class="rating">
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i>
-						</div>
-						<div class="product__price">$ 59.0</div>
-					</div>
-				</div>
-			</div>
-			<div
-				class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
-				<div class="product__item sale">
-					<div class="product__item__pic set-bg"
-						data-setbg="img/product/product-8.jpg">
-						<div class="label">Sale</div>
-						<ul class="product__hover">
-							<li><a href="img/product/product-8.jpg" class="image-popup"><span
-									class="arrow_expand"></span></a></li>
-							<li><a href="#"><span class="icon_heart_alt"></span></a></li>
-							<li><a href="#"><span class="icon_bag_alt"></span></a></li>
-						</ul>
-					</div>
-					<div class="product__item__text">
-						<h6>
-							<a href="#">Water resistant backpack</a>
-						</h6>
-						<div class="rating">
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i>
-						</div>
-						<div class="product__price">
-							$ 49.0 <span>$ 59.0</span>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 	</section>
 	<!-- Product Section End -->
 
 	<!-- Banner Section Begin -->
-	<section class="banner set-bg" data-setbg="img/banner/banner-1.jpg">
+	<section class="banner set-bg"
+		data-setbg="<c:url value="/resources/img/banner-1.jpg" />">
 	<div class="container">
 		<div class="row">
 			<div class="col-xl-7 col-lg-8 m-auto">
@@ -360,48 +200,22 @@
 					<div class="section-title">
 						<h4>Hot Trend</h4>
 					</div>
-					<div class="trend__item">
-						<div class="trend__item__pic">
-							<img src="img/trend/ht-1.jpg" alt="">
-						</div>
-						<div class="trend__item__text">
-							<h6>Chain bucket bag</h6>
-							<div class="rating">
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i>
+					<c:forEach items="${list_product_price }" var="item">
+						<div class="trend__item">
+							<div class="trend__item__pic">
+								<img style="width:80px" src="${item.image }" alt="">
 							</div>
-							<div class="product__price">$ 59.0</div>
-						</div>
-					</div>
-					<div class="trend__item">
-						<div class="trend__item__pic">
-							<img src="img/trend/ht-2.jpg" alt="">
-						</div>
-						<div class="trend__item__text">
-							<h6>Pendant earrings</h6>
-							<div class="rating">
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i>
+							<div class="trend__item__text">
+							<a href='<c:url value="/Detail/${item.id_product }" />'><h6>${item.name_product }</h6></a>
+								<div class="rating">
+									<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+										class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+										class="fa fa-star"></i>
+								</div>
+								<div class="product__price"><fmt:formatNumber value="${item.price}" minFractionDigits="0"/> vnđ</div>
 							</div>
-							<div class="product__price">$ 59.0</div>
 						</div>
-					</div>
-					<div class="trend__item">
-						<div class="trend__item__pic">
-							<img src="img/trend/ht-3.jpg" alt="">
-						</div>
-						<div class="trend__item__text">
-							<h6>Cotton T-Shirt</h6>
-							<div class="rating">
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i>
-							</div>
-							<div class="product__price">$ 59.0</div>
-						</div>
-					</div>
+					</c:forEach>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-6">
@@ -515,7 +329,7 @@
 		<div class="row">
 			<div class="col-lg-6 p-0">
 				<div class="discount__pic">
-					<img src="img/discount.jpg" alt="">
+					<img src="<c:url value="/resources/img/image_index.jpg" />" alt="">
 				</div>
 			</div>
 			<div class="col-lg-6 p-0">
@@ -604,5 +418,6 @@
 
 	<!-- Js Plugins -->
 	<jsp:include page="partial/linkJS.jsp"></jsp:include>
+	<script src='<c:url value="/resources/js/main.js"/>'></script>
 </body>
 </html>

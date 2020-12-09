@@ -11,10 +11,9 @@
             <div class="col-xl-6 col-lg-7">
                 <nav class="header__menu"> 
                     <ul>
-                        <li class="active"><a href='<c:url value="/hihi" />'>Home</a></li>
-                        <li><a href="#">Women</a></li>
-                        <li><a href="#">Men</a></li>
-                    <li><a href="#">Shop</a></li>
+                        <li class="active"><a href='<c:url value="/" />'>Home</a></li>
+                       
+                    <li><a href='<c:url value="/shop" />'>Shop</a></li>
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
                                 <li><a href="./product-details.html">Product Details</a></li>

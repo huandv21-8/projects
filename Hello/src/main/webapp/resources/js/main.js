@@ -227,7 +227,7 @@ Created: Colorib
     /*-------------------
 		Radio Btn
 	--------------------- */
-    $(".size__btn label").on('click', function () {
+    $(".size__btn label").on('click', function () {	
         $(".size__btn label").removeClass('active');
         $(this).addClass('active');
     });

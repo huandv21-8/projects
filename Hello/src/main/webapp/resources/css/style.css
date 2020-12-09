@@ -50,6 +50,11 @@ h6 {
 	font-family: "Montserrat", sans-serif;
 }
 
+/*==================   ===============*/
+
+/*====================*/
+
+
 h1 {
 	font-size: 70px;
 }
@@ -1249,6 +1254,7 @@ ol {
 }
 
 .product__hover li a {
+	padding-top: 13px;
 	font-size: 18px;
 	color: #111111;
 	display: block;
