@@ -98,6 +98,31 @@ public class product_service implements product_imp {
 //		 System.out.println(products.size());
 		return products;
 	}
+	
+	public List<product> shuffleListProduct () {
+		List<product> products = product_dao.list_product();
+		Collections.shuffle(products);
+		return products;
+	}
+	
+	public float maxPriceProduct() {
+		float max = 0;
+		  for (product product : product_dao.list_product()) {
+				if (product.getPrice() > max) {
+					 max = product.getPrice();
+				}
+			}
+		return max;
+	}
+	public float minPriceProduct() {
+		float max = 0;
+		  for (product product : product_dao.list_product()) {
+				if (product.getPrice() > max) {
+					 max = product.getPrice();
+				}
+			}
+		return max;
+	}
 }
 
 

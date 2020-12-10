@@ -14,6 +14,7 @@ import com.hello.DAO.product_dao;
 import com.hello.DAO.topic_dao;
 import com.hello.entity.category;
 import com.hello.entity.product;
+import com.hello.service.product_service;
 
 @Controller
 @RequestMapping("/shop")
@@ -25,6 +26,8 @@ public class shopController {
 	category_dao category_dao;
 	@Autowired
 	product_dao product_dao;
+	@Autowired
+	product_service product_service;
 
 	@GetMapping("")
 	@Transactional
@@ -32,6 +35,7 @@ public class shopController {
 		ModelAndView modelAndView = new ModelAndView("football/shop");
 		modelAndView.addObject("list_topic", topic_dao.list_topic());
 		modelAndView.addObject("list_category", category_dao.list_category());
+		modelAndView.addObject("list_product",product_service.shuffleListProduct());
 		return modelAndView;
 	}
 
@@ -47,13 +51,12 @@ public class shopController {
 						+ "							data-setbg=\"" + product.getImage()
 						+ "\" style=\"background-image: url(" + product.getImage() + ");\">\r\n"
 						+ "							<div class=\"label new\">New</div>\r\n"
-						+ "							<ul class=\"product__hover\">\r\n"
-						+ "								<li><a href=\"" + product.getImage()
-						+ "\" class=\"image-popup\"><span\r\n"
-						+ "										class=\"arrow_expand\"></span></a></li>\r\n"
-						+ "								<li><a href=\"#\"><span class=\"icon_heart_alt\"></span></a></li>\r\n"
-						+ "								<li><a href=\"#\"><span class=\"icon_bag_alt\"></span></a></li>\r\n"
-						+ "							</ul>\r\n" + "						</div>\r\n"
+						+ "<ul class=\"product__hover\">\r\n" + 
+						"								<li><a href=\""+product.getImage()+"\" class=\"image-popup\"><i\r\n" + 
+						"										class=\"fa fa-retweet\"></i></a></li>\r\n" + 
+						"								<li><a href=\"#\"><i class=\"far fa-heart\"></i></a></li>\r\n" + 
+						"								<li><a href=\"#\"><i class=\"fas fa-shopping-bag\"></i></a></li>\r\n" + 
+						"							</ul>" + "						</div>\r\n"
 						+ "						<div class=\"product__item__text\">\r\n"
 						+ "							<h6>\r\n" + "								<a href=\"#\">"
 						+ product.getName_product() + "</a>\r\n" + "							</h6>\r\n"
@@ -62,10 +65,9 @@ public class shopController {
 						+ "									class=\"fa fa-star\"></i> <i class=\"fa fa-star\"></i> <i\r\n"
 						+ "									class=\"fa fa-star\"></i>\r\n"
 						+ "							</div>\r\n"
-						+ "							<div class=\"product__price\">$ 59.0</div>\r\n"
+						+ "							<div class=\"product__price\">"+product.getPrice()+"</div>\r\n"
 						+ "						</div>\r\n" + "					</div>\r\n" + "				</div>";
 			}
-
 		}
 		if (htmlString.equals("")) {
 			htmlString = "Not product";

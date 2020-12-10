@@ -81,7 +81,8 @@
 													data-parent="#accordionExample">
 											</c:when>
 											<c:otherwise>
-												<div id="collapse${item.id_topic }" class="collapse" data-parent="#accordionExample">
+												<div id="collapse${item.id_topic }" class="collapse"
+													data-parent="#accordionExample">
 											</c:otherwise>
 										</c:choose>
 										<div class="card-body">
@@ -95,7 +96,6 @@
 														</li>
 													</c:if>
 												</c:forEach>
-
 											</ul>
 										</div>
 									</div>
@@ -111,7 +111,7 @@
 					<div class="filter-range-wrap">
 						<div
 							class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
-							data-min="33" data-max="99"></div>
+							data-min="335" data-max="995"></div>
 						<div class="range-slider">
 							<div class="price-input">
 								<p>Price:</p>
@@ -175,13 +175,52 @@
 		<div class="col-lg-9 col-md-9">
 			<div class="row listProduct">
 
+				<c:forEach items="${list_product }" var="item">
+
+					<div class="col-lg-4 col-md-6">
+						<div class="product__item">
+							<div class="product__item__pic set-bg"
+								data-setbg="${ item.image}">
+								<div class="label new">New</div>
+								<ul class="product__hover">
+									<li><a href="${item.image }" class="image-popup"><i
+											class="fa fa-retweet"></i></a></li>
+									<li><a href="#"><i class="far fa-heart"></i></a></li>
+									<li><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+								</ul>
+							</div>
+							<div class="product__item__text">
+								<h6>
+									<a href='<c:url value="/Detail/${item.id_product }" />'>${item.name_product }</a>
+								</h6>
+								<div class="rating">
+									<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+										class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+										class="fa fa-star"></i>
+								</div>
+								<c:choose>
+								<c:when test="${item.sale != null }">
+									<div class="product__price">
+										<fmt:formatNumber value="${ item.price-(item.price/100*item.sale) }" minFractionDigits="0"/> vnđ<span>
+											<fmt:formatNumber value="${item.price}" minFractionDigits="0"/> vnđ</span>
+									</div>
+								</c:when>
+								<c:otherwise>
+									<div class="product__price"><fmt:formatNumber value="${item.price}" minFractionDigits="0"/> vnđ</div>
+								</c:otherwise>
+							</c:choose>
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+				<!-- san pham hien thi o day  -->
 
 				<div class="col-lg-12 text-center">
 					<div class="pagination__option">
 						<a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#"><i
 							class="fa fa-angle-right"></i></a>
 					</div>
-				</div>
+				</div> 
 			</div>
 		</div>
 	</div>
@@ -203,7 +242,7 @@
 
 	<!-- Js Plugins -->
 	<jsp:include page="partial/linkJS.jsp"></jsp:include>
-
+<script src='<c:url value="/resources/js/main.js"/>'></script>
 	<script type="text/javascript">
     function getProduct(id_category) {
         $.ajax({

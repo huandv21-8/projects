@@ -41,6 +41,6 @@
 	<tx:annotation-driven
 		transaction-manager="transactionManager" />  
 		
-		<bean id="user" class="com.hello.entity.user.java"></bean>
+	<!-- 	<bean id="user" class="com.hello.entity.user.java"></bean> -->
 		
 </beans>
