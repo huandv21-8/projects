@@ -148,12 +148,16 @@ public class product_service implements product_imp {
 		pro.setPrice(price);
 		pro.setImage(image);
 		pro.setStatus(0);
-		pro.setSale(20);
-		pro.setCreated_at("2020-10-03 18:55:46");
-		pro.setUpdated_at("2020-10-03 18:55:46");				
+			
 		product_dao.createProduct(pro);
 	
-		
+
+	}
+	
+	public void deteteProduct(int id) {
+		product pro = product_dao.productbyID(id);
+		pro.setStatus(1);
+		product_dao.deleteProduct(pro);
 		
 	}
 	

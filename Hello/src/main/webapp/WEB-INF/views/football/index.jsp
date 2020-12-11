@@ -122,7 +122,7 @@
 							<ul class="product__hover">
 								<li><a href="${item.image }" class="image-popup"><i
 										class="fa fa-retweet"></i></a></li>
-								<li><a href="#"><i class="far fa-heart"></i></a></li>
+								<li><a href='<c:url value="/delete/${item.id_product }" />' onclick="return confirm('ban co muon xoa??')" ><i class="far fa-heart"></i></a></li>
 								<li><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
 							</ul>
 						</div>

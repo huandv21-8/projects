@@ -20,15 +20,15 @@ public class product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_product;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name = "id_category")
 	private category category;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name = "id_topic")
 	private topic topic;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name = "id_user")
 	private users users;
 

@@ -64,7 +64,7 @@ public class loginController {
 	}
 
 	@PostMapping("/checkRegister")
-	public ModelAndView checkRegister(@RequestParam String email, @RequestParam String password,
+	public ModelAndView checkRegister(HttpServletRequest request,@RequestParam String email, @RequestParam String password,
 			@RequestParam String confirmPass, ModelMap map) {
 
 		if (email == null || password == null || confirmPass == null) {
@@ -75,6 +75,8 @@ public class loginController {
 			return register();
 		} else {
 			if (user_service.register(email, password)) {
+				HttpSession session = request.getSession();
+				session.setAttribute("user", email);
 				return homeController.name();
 			}
 			return register();

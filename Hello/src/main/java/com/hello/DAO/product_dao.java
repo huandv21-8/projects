@@ -15,6 +15,7 @@ import com.hello.entity.image;
 import com.hello.entity.product;
 import com.hello.entity.size_list;
 import com.hello.entity.size_product;
+import com.hello.entity.topic;
 
 @Repository
 @Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
@@ -26,7 +27,7 @@ public class product_dao implements product_imp {
 	@Transactional
 	public List<product> list_product() {
 		Session session = sessionFactory.getCurrentSession();
-		String sqlString="from product";
+		String sqlString="from product where status = 0";
 		
 		List<product> list_productList = session.createQuery(sqlString).getResultList();
 		//List<product> list_productList = List 
@@ -65,12 +66,29 @@ public class product_dao implements product_imp {
 		return size;
 	}
 	
+	@Transactional
+	public product productbyID(int id ) {
+		
+		Session session= sessionFactory.getCurrentSession();
+		String sqlString = "from product where id_product = "+id ;
+		product product = (product) session.createQuery(sqlString).getSingleResult();				
+		//System.out.println("size anh: "+list_size.size());
+		return product;
+	}
+	
 	
 	
 	@Transactional
 	public void createProduct(product product) {
 		Session session= sessionFactory.getCurrentSession();
 		session.save(product);
+	}
+	
+
+	@Transactional
+	public void deleteProduct(product product) {
+		Session session= sessionFactory.getCurrentSession();
+		session.update(product);
 	}
 	
 }
