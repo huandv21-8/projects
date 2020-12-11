@@ -33,9 +33,13 @@
 						<%
 							if (session.getAttribute("user") != null) {
 						%>
-						<p>
+						<p class>
 							<strong><%=session.getAttribute("user")%></strong>
+							<div class="logout"><a href='<c:url value="/logout" />'>logout</a></div>
 						</p>
+						<button class="btn btn-primary"  onclick="window.location.href='/Hello/createProduct'">Create product</button>
+					
+						
 						<%
 							}else{
 						%>

@@ -10,17 +10,29 @@ import javax.persistence.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.hello.DAO.category_dao;
 import com.hello.DAO.product_dao;
+import com.hello.DAO.topic_dao;
+import com.hello.DAO.user_dao;
 import com.hello.daoimp.product_imp;
+import com.hello.entity.category;
 import com.hello.entity.product;
 import com.hello.entity.size_list;
 import com.hello.entity.size_product;
+import com.hello.entity.topic;
+import com.hello.entity.users;
 
 @Service
 public class product_service implements product_imp {
 
 	@Autowired
 	product_dao product_dao;
+	@Autowired
+	category_dao category_dao;
+	@Autowired
+	topic_dao topic_dao;
+	@Autowired
+	user_dao user_dao;
 
 	public List<product> list_product() {
 		List<product> list = new ArrayList<product>();
@@ -114,15 +126,38 @@ public class product_service implements product_imp {
 			}
 		return max;
 	}
-	public float minPriceProduct() {
-		float max = 0;
-		  for (product product : product_dao.list_product()) {
-				if (product.getPrice() > max) {
-					 max = product.getPrice();
-				}
-			}
-		return max;
+	
+	
+	public void createProduct(String name, float price, String description,String image) {
+	
+		category category = new category();
+		category.setId_category(1);
+		
+		topic topic = new topic();
+		topic.setId_topic(1);
+		
+		users users = new users();
+		users.setId_user(1);
+		
+		product pro = new product();
+		pro.setCategory(category);
+		pro.setTopic(topic);
+		pro.setUsers(users);
+		pro.setName_product(name);
+		pro.setDescription(description);
+		pro.setPrice(price);
+		pro.setImage(image);
+		pro.setStatus(0);
+		pro.setSale(20);
+		pro.setCreated_at("2020-10-03 18:55:46");
+		pro.setUpdated_at("2020-10-03 18:55:46");				
+		product_dao.createProduct(pro);
+	
+		
+		
 	}
+	
+	
 }
 
 

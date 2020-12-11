@@ -65,4 +65,45 @@ public class product_dao implements product_imp {
 		return size;
 	}
 	
+	
+	
+	@Transactional
+	public void createProduct(product product) {
+		Session session= sessionFactory.getCurrentSession();
+		session.save(product);
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

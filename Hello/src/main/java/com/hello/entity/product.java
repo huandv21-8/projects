@@ -176,5 +176,7 @@ public class product {
 	public void setSize_products(List<size_product> size_products) {
 		this.size_products = size_products;
 	}
+	
+	
 
 }

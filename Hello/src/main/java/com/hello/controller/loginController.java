@@ -35,6 +35,14 @@ public class loginController {
 		ModelAndView modelAndView = new ModelAndView("football/register");
 		return modelAndView;
 	}
+	
+	@GetMapping("/logout")
+	public ModelAndView logout(HttpServletRequest request) {
+		ModelAndView modelAndView = new ModelAndView("football/login");
+		HttpSession session = request.getSession();
+		session.removeAttribute("user");
+		return modelAndView;
+	}
 
 	@PostMapping("/checkLogin")
 	public ModelAndView checkLogin(HttpServletRequest request,@RequestParam String email, @RequestParam String password, ModelMap map) {
@@ -45,7 +53,7 @@ public class loginController {
 			if (user_service.checkLogin(new users(email, password))) {
 				HttpSession session = request.getSession();
 				session.setAttribute("user", email);
-			//	System.out.println(session.getAttribute("user"));
+//				System.out.println(session.getAttribute("user"));
 				return homeController.name();
 			}else {
 				map.addAttribute("checkLogin", "email or pass sai");

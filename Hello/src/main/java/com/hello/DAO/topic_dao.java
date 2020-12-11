@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hello.daoimp.topic_imp;
+import com.hello.entity.size_list;
 import com.hello.entity.topic;
 
 @Repository
@@ -27,5 +28,15 @@ public class topic_dao implements topic_imp {
 	
 		List<topic> list = session.createQuery(sqlString).getResultList();
 		return list;
+	}
+	
+	@Transactional
+	public topic topicbyID(int id ) {
+		
+		Session session= sessionFactory.getCurrentSession();
+		String sqlString = "from topic where id_topic = "+id ;
+		topic topic = (topic) session.createQuery(sqlString).getSingleResult();				
+		//System.out.println("size anh: "+list_size.size());
+		return topic;
 	}
 }

@@ -10,6 +10,7 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.hello.entity.category;
 import com.hello.entity.topic;
 import com.hello.entity.users;
 
@@ -41,6 +42,16 @@ public class user_dao {
 			return false;
 		}
 		
+	}
+	
+	@Transactional
+	public users userbyID(int id ) {
+		
+		Session session= sessionFactory.getCurrentSession();
+		String sqlString = "from users where id_user = "+id ;
+		users user = (users) session.createQuery(sqlString).getSingleResult();				
+		//System.out.println("size anh: "+list_size.size());
+		return user;
 	}
 	
 }
